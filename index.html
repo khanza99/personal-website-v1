@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="profile-container">
+            <img src="img/profile-picture-header.jpeg" alt="Foto Profil" class="profile-picture-header">
+            <h1>Siti Khanza Salsabila</h1>
+            <p>SMK WIKRAMA BOGOR</p>
+        </div>
+    </header>
+
+    <main>
+        <article id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>Saya Siti Khanza Salsabila, seorang siswi di SMK Wikrama Bogor jurusan Pengembangan Perangkat Lunak dan Gim (PPLG).
+                         Saat ini, saya sedang belajar tentang pembuatan website, mulai dari dasar-dasar HTML, CSS, hingga
+                          pengembangan front-end untuk menghasilkan desain modern dan interaktif.</p>
+                </div>
+                <aside class="about-image">
+                    <img src="img/profile-picture-about.jpeg" alt="Foto Profil">
+                </aside>
+            </div>
+        </article>
+        
+        <article id="contact">
+            <h2>Contact</h2>
+            <p>Hubungi saya melalui:</p>
+            <div class="contact-icons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=salsabilakhanza956@gmail.com" target="_blank" aria-label="Gmail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/khanzzaa.s/?next=%2F" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/khanza99" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>    
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Siti Khanza Salsabila</p>
+    </footer>
+
+    <button id="button-dark-mode" aria-label="Toggle Dark Mode">🌙</button>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('button-dark-mode').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>
