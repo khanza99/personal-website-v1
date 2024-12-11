@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- KELUAR DARI FOLDER -> '../style.css'
+      ../ = KELUAR DARI FOLDER SEBELUMNYA DARI FOLDER STYLES -> KELUAR DARI FOLDER SEBANYAK 1 FOLDER -->
+    <!-- MASUK KEDALAM FOLDER -> 'styles/style.css'  / BERARTI MASUK KEDALAM FOLDER 'styles' -> 'style.css' -->
+
+    <!-- LINK YANG DIBAWAH INI ADALAH LINK UNTUK MENGAMBIL ICON ICON CARI FONT AWESOME BISA DI CEK DI WEBSITENYA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -13,6 +18,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#portofolio">Portofolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -39,7 +45,17 @@
                 </aside>
             </div>
         </article>
-        
+
+        <article id="portofolio">
+            <div class="portofolio-container">
+                <h2>Portofolio</h2>
+                <div class="portofolio-content">
+                    <img src="img/sertifikatDicodingHtmlCss.svg" id="sertifikat-dicoding-html-css">
+                    <img src="img/sertifikatK3.svg" id="sertifikat-k3">
+                </div>
+            </div>
+        </article>
+
         <article id="contact">
             <h2>Contact</h2>
             <p>Hubungi saya melalui:</p>
