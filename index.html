@@ -8,7 +8,6 @@
     <!-- KELUAR DARI FOLDER -> '../style.css'
       ../ = KELUAR DARI FOLDER SEBELUMNYA DARI FOLDER STYLES -> KELUAR DARI FOLDER SEBANYAK 1 FOLDER -->
     <!-- MASUK KEDALAM FOLDER -> 'styles/style.css'  / BERARTI MASUK KEDALAM FOLDER 'styles' -> 'style.css' -->
-
     <!-- LINK YANG DIBAWAH INI ADALAH LINK UNTUK MENGAMBIL ICON ICON CARI FONT AWESOME BISA DI CEK DI WEBSITENYA -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -50,11 +49,17 @@
             <div class="portofolio-container">
                 <h2>Portofolio</h2>
                 <div class="portofolio-content">
-                    <img src="img/sertifikatDicodingHtmlCss.svg" id="sertifikat-dicoding-html-css">
-                    <img src="img/sertifikatK3.svg" id="sertifikat-k3">
+                    <img src="img/sertifikatDicodingHtmlCss.svg" id="sertifikat-dicoding-html-css" onclick="openModal(this)">
+                    <img src="img/sertifikatK3.svg" id="sertifikat-k3" onclick="openModal(this)">
                 </div>
             </div>
         </article>
+        
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
+        </div>
 
         <article id="contact">
             <h2>Contact</h2>
@@ -93,6 +98,28 @@
             document.body.classList.toggle('dark-mode');
             this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
+        function openModal(img) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-image");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        let span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() { 
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
