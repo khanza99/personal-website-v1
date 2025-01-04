@@ -19,6 +19,7 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#portofolio">Portofolio</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="/article/article.html">Article</a></li>
         </ul>
     </nav>
 
@@ -87,7 +88,6 @@
     <script>
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
